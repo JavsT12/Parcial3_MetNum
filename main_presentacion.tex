@@ -1,0 +1,117 @@
+\documentclass{cubeamer}
+
+\title{Proyecto Tercer Parcial}
+\subtitle{Métodos Numéricos}
+\author[Equipo 4]{Nicolás Gamboa \and Axel Correa \and Javier Tena \and Fernando Arrieta \and Juan Suástegui}
+\date{\today} % or whatever the date you are presenting in is
+\institute[Instituto Tecnológico y de Estudios Superiores de Monterrey]{Instituto Tecnológico y de Estudios Superiores de Monterrey}
+
+\begin{document}
+
+\maketitle
+
+\cutoc
+
+\section{Introducción}
+
+\begin{frame}{Descripción del problema a resolver}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[height = 0.3\textheight]{img/Analisis.png}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.7\textwidth}
+        \textsc{En el Análisis Estructural de Teleféricos, es necesaria la ubicación de las diferentes posiciones (coordenadas) de la cuerda, para lo cual se puede usar el polinomio de Newton conociendo algunas coordenadas:}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Descripción del problema a resolver}
+    \begin{table}[t]
+    \begin{center}
+    \begin{tabular}{| c | c |}
+    \hline
+          X & Y \\ \hline
+         0 & 0 \\
+         10 & 0 \\
+         30 & 0 \\
+         50 & 10 \\
+         80 & 30 \\
+         90 & 40 \\
+         120 & 70 \\
+         150 & 100 \\ \hline
+    \end{tabular}
+    \caption{Coordenadas Conocidas}
+    \end{center}
+    \end{table}
+\end{frame}
+
+\section{Desarrollo}
+
+\begin{frame}{Desarrollo}
+    \textsc{Análisis  de coordenadas obtenida}
+            \begin{figure}
+                \centering
+                \includegraphics[height = 0.6\textheight]{img/P1.png}
+            \end{figure}
+\end{frame}
+
+\begin{frame}{Desarrollo}
+\begin{columns}
+    \begin{column}{0.7\textwidth}
+    \textsc{Se procedió a aplicar el método del polinomio de Newton, el primer paso fue obtener los grados necesario para la aplicación de método en este caso es grado 7}
+    \end{column}
+     \begin{column}{0.4\textwidth}
+     \begin{figure}
+                \centering
+                \includegraphics[height = 0.4\textheight]{img/Cabina.png}
+            \end{figure}
+     \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Desarrollo}
+    \textsc{Primer paso del Método}
+            \begin{figure}
+                \centering
+                \includegraphics[height = 0.36\textheight]{img/C7.png}
+            \end{figure}
+\end{frame}
+
+\begin{frame}{Desarrollo}
+    \textsc{Polinomio de Newton Obtenido}
+    \[ P_n=1.025E-11x^7-4.905E-9x^6+0.0000009133x^5-\]
+\[ 0.0000836245x^4+0.0039161875x^3-0.0789057x^2+0.47241x\]
+\end{frame}
+
+\begin{frame}{Desarrollo}
+    \textsc{Análisis de coordenadas obtenidas por la ecuación}
+            \begin{figure}
+                \centering
+                \includegraphics[height = 0.7\textheight]{img/Resultado.png}
+            \end{figure}
+\end{frame}
+
+\begin{frame}{Desarrollo}
+    \textsc{Resultado en Matlab}
+            \begin{figure}
+                \centering
+                \includegraphics[height = 0.7\textheight]{img/Matlab.jpg}
+            \end{figure}
+\end{frame}
+
+\section{Conclusión}
+
+\begin{frame}{Conclusión}
+En conclusión después de haber obtenido los conocimientos a lo largo de semestre nos damos cuenta que las matemáticas y cualquier método aplicable es de mucha ayuda en diversas carrera donde no se pensaría que se pudiera aplicar, asimismo para este tipo de problemática existe un procedimiento de análisis mediante la estructura de los cables este conocimiento aprendido nos puede servir como apoyo o herramienta auxiliar para obtener los resultados óptimos .
+\end{frame}
+
+\begin{frame}[standout]
+    \Huge\textsc{Muchas Gracias}
+\end{frame}
+
+\appendix
+
+\end{document}

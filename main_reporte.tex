@@ -1,0 +1,157 @@
+\documentclass[fleqn,10pt]{olplainarticle}
+% Use option lineno for line numbers 
+
+\title{Tercer Proyecto Parcial}
+
+\author[1]{Nicolás Gamboa}
+\author[2]{Axel Correa}
+\author[3]{Javier Tena}
+\author[4]{Fernando Arrieta}
+\author[5]{Juan Suástegui}
+\affil[1]{A01636262}
+\affil[2]{A01636607}
+\affil[3]{A01067470}
+\affil[4]{A01336257}
+\affil[5]{A01066742}
+
+
+\keywords{Teleférico, Polinomio de Newton, Métodos Numéricos}
+
+\begin{abstract}
+The following report will explain and demonstrate how the use of newton's polynomial can be applied in the context of civil engineering and can serve as a tool to solve a problem, as well as how the methods observed in class can be applied in the same context to obtain the same result and obtain the relevant conclusions.  
+\end{abstract}
+
+\begin{document}
+
+\flushbottom
+\maketitle
+\thispagestyle{empty}
+
+\section*{Introducción}
+
+Mediante los diversos temas observados en este tercer y ultimo parcial de métodos numéricos se ha buscado una problemática aplicable a los conocimiento aprendidos, asimismo mediante el uso de diversas herramientas también usadas en clase con la finalidad de poner en practica lo aprendido.
+Para este proyecto parcial fue necesario encontrar una problemática en el área de estudio de la ingeniería civil, en donde se pudieran aplicar los conocimientos de la clase, asimismo se seleccionó: 
+ \begin{itemize}
+      \item Problemática con polinomio de newton
+\end{itemize}
+
+\section*{Descripción del problema a resolver}
+
+Mediante el uso del polinomio de Newton, se busca mediante información previamente obtenida determinar la función para el análisis matemático, mediante la aplicación de la siguiente formula:
+
+\[ P_n=C_0 + C_1(x-x_0)+C_2(x-x_0)(x-x_1)+...C_n(x-x_0)(x-x_1)...(x-x_n)\]
+\\
+En el Análisis Estructural de Teleféricos, es necesaria la ubicación de las diferentes posiciones (coordenadas) de la cuerda, para lo cual se puede usar una interpolación lineal conociendo algunas coordenadas, mediante el cual se puede obtener la función para hacer el análisis pertinente para determinar si la ruta estructural es la adecuada. 
+
+\subsection*{Cálculos}
+Se analizaran la siguiente serie de coordenadas obtenidas del modelo estructural observado a continuación.
+El objetivo es después de aplicar el método es analizar otro conjuntó de coordenadas en x para obtener el valor de las y que representaría la cabina en el análisis y de esta manera poder interpretar de la mejor manera posible los datos arrojados.
+ \\
+ \\
+ \\
+ \\
+ \\
+ \\
+ \\
+ \\
+ \begin{table}[ht]
+    \begin{center}
+    \begin{tabular}{| c | c | }
+    \hline
+         X & Y \\ \hline
+         0 & 0 \\
+         10 & 0 \\
+         30 & 0 \\
+         50 & 10 \\
+         80 & 30 \\
+         90 & 40 \\
+         120 & 70 \\
+         150 & 100 \\ \hline
+    \end{tabular}
+    \caption{Coordenadas Conocidas}
+    \end{center}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{Imagenes/Cabina.png}
+\caption{Análisis de Teleférico.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\linewidth]{Imagenes/P1.png}
+\caption{Análisis de coordenadas obtenidas.}
+\end{figure}
+
+Como se puede observar en el gráfico obtenido por las coordenadas anteriormente obtenidas se observa que la ruta del teleférico no es la mas apropiada por lo cual es necesario un mejor análisis para obtener la ruta ideal.
+\smallskip
+
+Se procedió a aplicar el método del polinomio de Newton, el primer paso fue obtener los grados necesario para la aplicación de método en este caso es grado 7 y se obtienen mediante la aplicación de la siguiente formula:  
+\[ C_n=\frac{f_1(x) - f(x_0)}{x_1-x_0}\]
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.8\linewidth]{Imagenes/C7.png}
+\caption{Primer paso del método de polinomio de Newton.}
+\end{figure}
+
+Después de obtener los resultados de los C, se procede aplicar la formula del polinomio de newton para obtener la ecuación del teleférico dando la siguiente substitución: 
+\[ P_n=1.025E-11x^7-4.905E-9x^6+0.0000009133x^5-\]
+\[ 0.0000836245x^4+0.0039161875x^3-0.0789057x^2+0.47241x\]
+
+Para concluir evaluaremos la ecuación obtenida para analizar los resultados y mediante un gráfico podremos observar de manera visual como seria el recorrido ideal para la cabina.
+\smallskip
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\linewidth]{Imagenes/Resultado.png}
+\caption{Análisis de coordenadas obtenidas por la ecuación.}
+\end{figure}
+
+\begin{table}[ht]
+    \begin{center}
+    \begin{tabular}{| c | c | }
+    \hline
+         X & Y \\ \hline
+         0 & 0 \\
+         10 & 0 \\
+         30 & 0 \\
+         50 & 10 \\
+         80 & 34.468 \\
+         90 & 48.15936 \\
+         120 & 99.57816 \\
+         150 & 173.502 \\ \hline
+    \end{tabular}
+    \caption{Coordenadas Conocidas}
+    \end{center}
+\end{table}
+
+
+\subsection*{Resultados}
+Finalmente para la comprobación de nuestros cálculos se uso Matlab en el cual tenemos un programa que es capaz de hacer el calculo del polinomio de Newton para esto es necesario ingresar el grado del polinomio a analizar y los datos de "x" y "y", finalmente se obtiene la ecuación del polinomio y el gráfico que representa la ecuación en un gráfico. 
+
+Resultado el siguiente gráfico de la ecuación obtenida:
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{Imagenes/Matlab.jpg}
+\caption{Análisis del Polinomio de Newton en Matlab.}
+\end{figure}
+
+Se comprobó mediante el gráfico que los datos obtenidos son los mismos, con esto se puede hacer un análisis mas profundo para determinar la ruta mas segura para el teleférico y así poder tomar las decisiones mas acertadas para la ruta.  
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{Imagenes/Mat2.jpg}
+\caption{Análisis del Polinomio de Newton en Matlab.}
+\end{figure}
+\bigskip
+\bigskip
+\bigskip
+
+
+\section*{Conclusiones}
+
+En conclusión después de haber obtenido los conocimientos a lo largo de semestre nos damos cuenta que las matemáticas y cualquier método aplicable es de mucha ayuda en diversas carrera donde no se pensaría que se pudiera aplicar, asimismo para este tipo de problemática existe un procedimiento de análisis mediante la estructura de los cables este conocimiento aprendido nos puede servir como apoyo o herramienta auxiliar para obtener los resultados óptimos .
+
+\end{document}
